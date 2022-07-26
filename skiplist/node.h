@@ -22,7 +22,7 @@ private:
     /* data */
     K key_;
     V value_;
-    Node<K, V> **pre_;
+    Node<K, V> **next_;
     int node_depth_;
 public:
     Node() {}
@@ -41,7 +41,7 @@ Node<K, V>::Node(const K k_, const V v_) {
 
 template<typename K, typename V>
 Node<K, V>::~Node() {
-    delete[]pre_;
+    delete[]next_;
 }
 
 template<typename K, typename V>
